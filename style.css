@@ -76,6 +76,28 @@ h2 {
     color: var(--paper-white);
     font-family: 'Caveat', cursive;
     font-size: 3rem;
+    /* Base size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    /* Space between icons and text */
+    white-space: nowrap;
+    /* Force one line */
+    width: 100%;
+}
+
+h2 span {
+    font-size: 2rem;
+    /* Smaller than the base/icons */
+    font-weight: 700;
+    margin-top: 5px;
+    /* Visual alignment fix if needed */
+}
+
+h2 i {
+    font-size: 3rem;
+    /* Larger icons */
 }
 
 h3 {
