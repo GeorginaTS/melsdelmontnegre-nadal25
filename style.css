@@ -1,0 +1,251 @@
+:root {
+    --christmas-red: #C41E3A;
+    /* Cheerful bright red */
+    --christmas-green: #2E8B57;
+    /* SeaGreen - softer, cheerful green */
+    --christmas-gold: #FFD700;
+    --paper-white: #FFFFFF;
+    /* Pure white */
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    /* Softer shadow */
+    /* Flat bright background */
+    --bg-color: #C41E3A;
+    --bg-gradient: radial-gradient(circle at center, #D42426 0%, #8B0000 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    /* Good practice not to get too wide on massive screens */
+}
+
+
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    /* max-width removed to allow full 100vw cards */
+    height: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 200;
+    /* Bebas Neue is a display font, usually 400 is fine */
+    font-size: clamp(1rem, 7.5vw, 4rem);
+    /* Can often go a bit larger with compressed fonts like Bebas */
+    margin-bottom: 0.5rem;
+    color: var(--paper-white);
+    text-transform: uppercase;
+    /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
+    white-space: nowrap;
+    letter-spacing: 6px;
+    /* Added spacing */
+    /* Prevent line break */
+    width: 100%;
+    /* Ensure it takes available space */
+    /* removed overflow hidden/ellipsis to ensure it just shrinks or shows all */
+}
+
+h2 {
+    color: var(--paper-white);
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+}
+
+h3 {
+    color: var(--paper-white);
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+/* ... existing header p styles ... */
+
+#card-container {
+    position: relative;
+    width: 600px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#photo-stack {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.photo-card {
+    position: absolute;
+    width: auto;
+    /* Let card shrink/grow with image */
+    max-width: 95vw;
+    max-height: 65vh;
+    /* Increased from 50vh */
+    /* Constraint */
+    /* Removed fixed width 95vw/320px */
+    padding: 15px 15px 40px 15px;
+    /* Keeping original padding but adding overflow handling */
+    background: var(--paper-white);
+    box-shadow: 0 10px 20px var(--shadow-color);
+    border-radius: 4px;
+    transition: transform 1.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 1.5s ease;
+    opacity: 0;
+    /* Start off-screen */
+    transform: translate(-50%, -100vh) rotate(0deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    overflow-y: auto;
+    /* Allow scrolling if text is too long */
+    scrollbar-width: thin;
+    /* Firefox */
+}
+
+/* Webkit scrollbar styling */
+.photo-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+.photo-card::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.photo-card::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.photo-card img {
+    width: auto;
+    max-width: 100%;
+    /* Ensure it doesn't overflow card width constraint */
+    max-height: 45vh;
+    /* Increased from 35vh */
+    /* Limit height so it fits on screen nicely */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    pointer-events: none;
+    object-fit: contain;
+    flex-shrink: 0;
+    /* Prevent image from squishing */
+}
+
+.photo-info {
+    text-align: center;
+    width: 100%;
+    /* Ensure text container takes full width */
+    /* Removed font-family Cinzel to inherit or let specific classes handle it, or restore if needed. Keeping simple.*/
+}
+
+.photo-month {
+    font-size: 1.2rem;
+    /* font-family removed to use default Lato */
+    color: var(--christmas-red);
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.photo-title {
+    font-family: 'Caveat', cursive;
+    /* Handwriting font as requested for "h2" subtitles */
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    /* Responsive font size to fit long titles */
+    line-height: 1.2;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 700;
+}
+
+.photo-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    /* Added requested margin */
+}
+
+/* Animation classes */
+.photo-card.dropped {
+    opacity: 1;
+    /* transform will be set inline by JS for randomness */
+}
+
+#controls {
+    margin-top: 2rem;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#controls.visible {
+    opacity: 1;
+}
+
+#replay-btn {
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #fff;
+    color: #fff;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+#replay-btn:hover {
+    background: var(--christmas-red);
+    color: #fff;
+    border-color: var(--christmas-red);
+    box-shadow: 0 0 15px var(--christmas-red);
+}
+
+@media (max-width: 768px) {
+    /* H1 font size handled by clamp() now, removing override */
+
+    #card-container {
+        height: 60vh;
+    }
+}

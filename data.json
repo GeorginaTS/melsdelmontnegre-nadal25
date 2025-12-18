@@ -1,0 +1,74 @@
+[
+  {
+    "month": "Gener",
+    "title": "Parada de Nadal Premiada",
+    "text": "La nostra parada al mercat, guanyadora del concurs de decoració.",
+    "image": "img/IMG-20230406-WA0022.jpg"
+  },
+  {
+    "month": "Febrer",
+    "title": "El batec silenciós de l’hivern",
+    "text": "Fins i tot al febrer, el rusc batega. 🐝",
+    "image": "img/febrer.jpg"
+  },
+  {
+    "month": "Març",
+    "title": "El despertar del rusc",
+    "text": "Març porta moviment i nova vida. 🐝🌱",
+    "image": "img/marc.jpg"
+  },
+  {
+    "month": "Abril",
+    "title": "Abril al jardí",
+    "text": "La mel surt al carrer, entre flors i primavera. 🍯🌸",
+    "image": "img/abril.jpeg"
+  },
+  {
+    "month": "Maig",
+    "title": "Maig en marxa",
+    "text": "Els ruscs plens, esperant la flors del castanyer. 🐝🌿",
+    "image": "img/maig.jpg"
+  },
+  {
+    "month": "Juny",
+    "title": "L'Estiu i la Promesa",
+    "text": "El camp florit ens dona la primera gran collita. ☀️🍯",
+    "image": "img/juny.jpg"
+  },
+  {
+    "month": "Juliol",
+    "title": "La Vida en Plena Expansió",
+    "text": "Eixams actius i caixes ben plenes sota el sol. 🏞️🐝",
+    "image": "img/juliol.jpg"
+  },
+  {
+    "month": "Agost",
+    "title": "La Dolçor Alliberada",
+    "text": "Moment clau: l'extractor fa màgia amb el bresca. ✨🥄",
+    "image": "img/agost.jpg"
+  },
+  {
+    "month": "Setembre",
+    "title": "Mel en Pots: El Fruit Final",
+    "text": "El tresor de l'any, llest per ser tastat. 🛍️💛",
+    "image": "img/setembre.jpeg"
+  },
+  {
+    "month": "Octubre",
+    "title": "Descans, però amb Cura",
+    "text": "L'Alex assegura el rusc abans del fred. 🌬️🍂",
+    "image": "img/octubre.jpg"
+  },
+  {
+    "month": "Novembre",
+    "title": "A Recer de l'Hivern",
+    "text": "Les abelles s'agrupen, l'espera de la llum. 🚪❄️",
+    "image": "img/novembre.jpg"
+  },
+  {
+    "month": "Desembre",
+    "title": "Nadal sobre Rodes",
+    "text": "La 'Bee-cicleta' portant dolços desitjos per a tothom.",
+    "image": "img/bee-cicleta.png"
+  }
+]
